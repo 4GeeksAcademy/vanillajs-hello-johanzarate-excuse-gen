@@ -2,13 +2,7 @@
 import "bootstrap";
 import "./style.css";
 
-window.onload = () => {
-  document.querySelector("#btn").addEventListener("click", () => {
-    document.querySelector("#the-excuse").innerHTML = generateExcuse();
-  });
-
-  console.log("Hello Rigo from the console!");
-};
+window.onload = () => {};
 
 function generateExcuse() {
   let who = ["The dog", "My grandma", "The mailman", "My bird"];
@@ -27,13 +21,14 @@ function generateExcuse() {
   let whatIndex = Math.floor(Math.random() * what.length);
   let whenIndex = Math.floor(Math.random() * when.length);
 
-  return (
+  let excuse =
     who[whoIndex] +
     " " +
     action[actionIndex] +
     " " +
     what[whatIndex] +
     " " +
-    when[whenIndex]
-  );
+    when[whenIndex];
+  return excuse;
 }
+document.getElementById("text").innerText = generateExcuse();
